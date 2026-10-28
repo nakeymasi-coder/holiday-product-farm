@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<meta name="color-scheme" content="light dark"/>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#3d7dc4">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Holiday Farm">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<title>Holiday Product Farm — House of Glam</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFF8F5; --bg2:#FFF1EC; --surface:#FFFFFF; --surface2:#FFF6F1;
+  --ink:#22161F; --muted:#6B5A66; --line:#F0DAD3;
+  --rose:#B4234A; --rose2:#E7547A; --gold:#B98A2F; --gold-bg:#FFF3D6;
+  --pine:#173F35; --pine-bg:#E6F2EC; --plum:#2B1E3A; --navy:#1E2A4A;
+  --red:#9E1B32; --shadow:0 10px 30px rgba(60,20,40,.09);
+  --r:18px;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#16101E; --bg2:#1E152C; --surface:#241A36; --surface2:#2A1F40; --ink:#FFF4EE; --muted:#CBB8C6; --line:#3D2E52; --rose:#FF7A9A; --rose2:#FF9AB3; --gold:#E8C476; --gold-bg:#3A2E12; --pine:#7ED3B2; --pine-bg:#14362B; --shadow:0 10px 30px rgba(0,0,0,.35); }
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",system-ui,sans-serif;line-height:1.55}
+a{color:var(--rose);text-decoration-thickness:1px;text-underline-offset:2px}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;line-height:1.05;margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px 64px}
+.topbar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar-in{max-width:1180px;margin:0 auto;padding:10px 18px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.brand{font-weight:900;letter-spacing:.04em;font-size:13px;text-transform:uppercase}
+.brand span{color:var(--rose)}
+.topbar nav{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
+.topbar nav a{font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;padding:7px 10px;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+.hero{padding:34px 0 8px;display:grid;grid-template-columns:1.25fr .75fr;gap:22px}
+@media(max-width:820px){.hero{grid-template-columns:1fr}}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;background:var(--plum);color:#FFD98A;font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;padding:7px 11px;border-radius:999px}
+@media(prefers-color-scheme:dark){.eyebrow{background:#3A2A12}}
+.hero h1{font-size:clamp(42px,7vw,76px);font-weight:900;margin:16px 0 12px}
+.hero h1 em{color:var(--rose);font-style:italic}
+.lede{font-size:18px;color:var(--muted);max-width:62ch}
+.lede strong{color:var(--ink)}
+.hero-card{background:var(--plum);color:#FFF6E8;border-radius:24px;padding:22px;box-shadow:var(--shadow);align-self:start}
+@media(prefers-color-scheme:dark){.hero-card{background:#2E2145}}
+.hero-card h3{color:#FFD98A;font-size:22px;margin-bottom:8px}
+.hero-card p{color:#EFE3F2;font-size:14.5px;margin:0 0 14px}
+.countrow{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.count{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:10px;text-align:center}
+.count b{display:block;font-size:26px;font-family:"DM Mono",monospace}
+.count span{font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0 6px}
+@media(max-width:820px){.stats{grid-template-columns:1fr 1fr}}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;box-shadow:var(--shadow)}
+.stat b{font-size:28px;display:block;line-height:1;font-family:"Playfair Display",serif}
+.stat p{margin:6px 0 0;font-size:13.5px;color:var(--muted)}
+.src{font-size:11.5px;color:var(--muted);margin-top:8px;display:block}
+section{margin-top:44px}
+.sec-head{display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:14px}
+.sec-head h2{font-size:clamp(28px,4vw,40px);font-weight:800}
+.sec-head p{color:var(--muted);max-width:62ch;margin:6px 0 0}
+.pill{font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;padding:6px 10px;border-radius:999px;background:var(--gold-bg);color:var(--gold);border:1px solid var(--line);white-space:nowrap}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.fbtn{border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-weight:800;font-size:13.5px;padding:9px 14px;border-radius:999px;cursor:pointer}
+.fbtn[aria-pressed="true"]{background:var(--rose);border-color:var(--rose);color:#fff}
+@media(prefers-color-scheme:dark){.fbtn[aria-pressed="true"]{color:#1B0F16}}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(max-width:820px){.grid{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px}
+.card.hide{display:none}
+.rankrow{display:flex;align-items:center;gap:10px}
+.rank{width:42px;height:42px;flex:0 0 42px;border-radius:50%;background:var(--rose);color:#fff;display:grid;place-items:center;font-family:"Playfair Display",serif;font-weight:900;font-size:20px}
+.phase{font-size:11px;font-weight:900;letter-spacing:.07em;text-transform:uppercase;padding:5px 9px;border-radius:999px}
+.phase.now{background:var(--pine-bg);color:var(--pine)} .phase.next{background:var(--gold-bg);color:var(--gold)} .phase.then{background:var(--surface2);color:var(--muted);border:1px solid var(--line)}
+.price{margin-left:auto;text-align:right;font-family:"DM Mono",monospace;font-weight:500;font-size:15px}
+.price small{display:block;font-family:"DM Sans",sans-serif;font-size:11px;color:var(--muted)}
+.card h3{font-size:23px;font-weight:800}
+.card .art{font-weight:700;color:var(--rose);font-size:14.5px}
+.card p{margin:0;color:var(--muted);font-size:14.5px}
+.card p strong{color:var(--ink)}
+.why{border-top:1px dashed var(--line);padding-top:10px;font-size:13.5px}
+.why b{color:var(--pine)}
+.card footer{margin-top:auto;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.addbtn{border:0;background:var(--ink);color:var(--bg);font:inherit;font-weight:900;font-size:13.5px;padding:10px 14px;border-radius:999px;cursor:pointer}
+.addbtn.added{background:var(--pine);color:#fff}
+@media(prefers-color-scheme:dark){.addbtn.added{color:#0E241C}}
+.tag{font-size:12px;font-weight:700;border:1px solid var(--line);padding:5px 9px;border-radius:999px;background:var(--surface2)}
+.batch{margin-top:16px;background:var(--plum);color:#FFF3E2;border-radius:18px;padding:14px 16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;box-shadow:var(--shadow)}
+.batch b{font-family:"Playfair Display",serif;font-size:19px}
+.batch span{font-size:13.5px;opacity:.9}
+.batch button{margin-left:auto;border:0;background:#FFD98A;color:#241335;font:inherit;font-weight:900;padding:10px 14px;border-radius:999px;cursor:pointer}
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:820px){.timeline{grid-template-columns:1fr}}
+.tcol{border-radius:20px;padding:18px;border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow)}
+.tcol.a{border-top:6px solid var(--pine)} .tcol.b{border-top:6px solid var(--gold)} .tcol.c{border-top:6px solid var(--rose)}
+.tcol h3{font-size:21px;margin-bottom:6px}.tcol p,.tcol li{font-size:14px;color:var(--muted)} .tcol ul{margin:8px 0 0;padding-left:18px}
+.dates{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:820px){.dates{grid-template-columns:1fr}}
+.date{display:flex;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;align-items:flex-start}
+.date time{font-family:"DM Mono",monospace;font-weight:500;background:var(--surface2);border:1px solid var(--line);border-radius:10px;padding:8px;text-align:center;min-width:86px;font-size:13px}
+.date p{margin:2px 0 0;font-size:14px;color:var(--muted)} .date b{font-size:15px}
+.warn{background:#FFF0F0;border:1px solid #F3C2C2;border-radius:16px;padding:15px;font-size:14.5px;margin-top:12px}
+@media(prefers-color-scheme:dark){.warn{background:#3A1622;border-color:#6B2A3D}}
+.catlist{display:grid;gap:8px}
+.catrow{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.catrow .n{font-family:"Playfair Display",serif;font-weight:900;font-size:20px;color:var(--rose);text-align:center}
+.catrow p{margin:0;font-size:13.5px;color:var(--muted)} .catrow b{font-size:15.5px}
+.catrow .pr{font-family:"DM Mono",monospace;font-size:13px;white-space:nowrap}
+@media(max-width:560px){.catrow{grid-template-columns:34px 1fr}.catrow .pr{grid-column:2}}
+.themes{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:820px){.themes{grid-template-columns:1fr}}
+.theme{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px}
+.theme h3{font-size:19px;margin-bottom:4px}.theme p{margin:0;font-size:14px;color:var(--muted)}
+.verdict{font-size:11px;font-weight:900;letter-spacing:.07em;text-transform:uppercase;padding:4px 8px;border-radius:999px;display:inline-block;margin-bottom:8px}
+.v-open{background:var(--pine-bg);color:var(--pine)} .v-mixed{background:var(--gold-bg);color:var(--gold)} .v-sat{background:#FDE8EC;color:var(--red)}
+@media(prefers-color-scheme:dark){.v-sat{background:#3A1622;color:#FF9AB3}}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:820px){.two{grid-template-columns:1fr}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow)}
+.panel h3{font-size:21px;margin-bottom:8px}.panel ul{margin:0;padding-left:18px}.panel li{font-size:14px;margin:6px 0;color:var(--muted)} .panel li strong{color:var(--ink)}
+.dont{border-top:6px solid var(--red)} .safe{border-top:6px solid var(--pine)}
+.note{font-size:13px;color:var(--muted)}
+details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-top:10px}
+summary{font-weight:900;cursor:pointer;font-size:15px}
+details p,details li{font-size:14px;color:var(--muted)}
+.foot{margin-top:44px;border-top:1px solid var(--line);padding-top:18px;font-size:13px;color:var(--muted)}
+.foot a{word-break:break-word}
+.toast{position:fixed;left:50%;bottom:86px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--bg);padding:11px 16px;border-radius:999px;font-weight:800;font-size:14px;opacity:0;pointer-events:none;transition:.25s;z-index:30;max-width:92vw;text-align:center}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="topbar-in">
+<div class="brand">House of Glam <span>· Holiday Farm</span></div>
+<nav>
+<a href="#farm">The Farm — Top 10</a><a href="#dates">Dates</a><a href="#themes">Themes</a><a href="#safe">Stay Safe</a>
+</nav></div></header>
+
+<div class="wrap">
+<div class="hero">
+  <div>
+    <span class="eyebrow">✦ Sales Strategist Plan · Researched Oct 28, 2026</span>
+    <h1>Let's create more — <em>the holiday way.</em></h1>
+    <p class="lede">Glam, I didn't guess. I searched what's actually selling for Holiday 2026 and ranked it for <strong>your</strong> shop: glamorous, faith-friendly, size-inclusive, for women 40+, grandmothers, and plus-size women. The verdict: <strong>lead with crewnecks, mugs, and stockings this week</strong> — fast, US-fulfilled, and built around the two lanes competitors are leaving wide open for you: <strong>glam grandma in pink &amp; gold</strong> and <strong>Black Mrs. Claus</strong>.</p>
+    <p class="lede" style="font-size:15px;margin-top:10px">Nothing here is built or published yet — this farm is your approval board. Add the ones you love to your batch, and that's the build order.</p>
+  </div>
+  <aside class="hero-card">
+    <h3>The clock is the strategy</h3>
+    <p>Every guide says core listings should already be live — a late-October launch still works <em>only</em> if it's US-fulfilled, fast-turn, and niche-specific. Generic December launches can't rank in time.</p>
+    <div class="countrow">
+      <div class="count"><b id="cBF">30</b><span>days to Black Fri</span></div>
+      <div class="count"><b id="cCM">33</b><span>days to Cyber Mon</span></div>
+      <div class="count"><b>~Dec 8–10</b><span>your own cutoff*</span></div>
+    </div>
+    <p style="margin-top:12px;font-size:12.5px">*Set your shop cutoff 2–3 days before your supplier's. Printify's 2026 cutoff is <strong>not yet published</strong> — see Dates below. Source: POD Forecast / Teeinblue strategist report, Oct 28, 2026.</p>
+  </aside>
+</div>
+
+<div class="stats">
+  <div class="stat"><b>$1.013 trillion</b><p>Forecast Nov–Dec 2026 holiday sales, +4.2% vs $972B in 2025.</p><span class="src">Source: NRF via Reuters, Oct 15, 2026</span></div>
+  <div class="stat"><b>$275.1B online</b><p>Adobe's online forecast (+6.7%). Apparel is the #2 online category at $51.3B (+4.7%); mobile is 57.4% of season spend.</p><span class="src">Source: Adobe, Sep 28, 2026</span></div>
+  <div class="stat"><b>~32% of the year</b><p>November–December alone = ~32% of a full year's personalized-product sales value across ~300,000 Shopify campaigns.</p><span class="src">Source: Teeinblue campaign data, Jul 2025–Jun 2026</span></div>
+  <div class="stat"><b>$1,654</b><p>Average household holiday budget, +4% (Deloitte, cited in the report).</p><span class="src">Source: Deloitte via strategist report, Oct 28, 2026</span></div>
+</div>
+
+<section id="farm">
+  <div class="sec-head"><div><h2>🌾 The Farm — Top 10, ranked for House of Glam</h2><p>Prices are retail, before Black Friday / Cyber Monday discounting — plan ~20–25% off Nov 27–30, in line with Adobe's ~23% peak apparel discount. Tap a phase to filter the rows.</p></div><span class="pill">10 products · 3 waves</span></div>
+  <div class="filters" role="group" aria-label="Filter by launch wave">
+    <button class="fbtn" data-f="all" aria-pressed="true">All 10 rows</button>
+    <button class="fbtn" data-f="now" aria-pressed="false">🌱 Wave 1 — Launch this week</button>
+    <button class="fbtn" data-f="next" aria-pressed="false">🌿 Wave 2 — Next drop</button>
+    <button class="fbtn" data-f="then" aria-pressed="false">🎁 Wave 3 — Bundles &amp; upsells</button>
+  </div>
+  <div class="grid" id="farmGrid"></div>
+  <div class="batch" id="batchBar">
+    <b>Your build batch: <span id="batchCount">0</span></b>
+    <span id="batchNames">Nothing picked yet — tap “Add to my batch” on the rows you want built first.</span>
+    <button id="copyBatch" type="button">Copy my batch list</button>
+  </div>
+  <p class="note" style="margin-top:10px">Batch lives only on this page, in this visit — it's your picking list to send back, not an order. Nothing gets built or published from this page alone.</p>
+</section>
+
+<section>
+  <div class="sec-head"><div><h2>Launch order — do NOT drop all 10 at once</h2><p>The report's sequenced plan for an Oct 28 start. Skip knit sweaters and anything fulfilled outside the US.</p></div></div>
+  <div class="timeline">
+    <div class="tcol a"><h3>🌱 This week</h3><p><strong>#1 Glam Grandma Crewneck · #2 Faith Nativity Crewneck · #8 Pink Christmas Mug · #10 Personalized Stockings</strong></p><ul><li>Fast, US-fulfilled, indexable now</li><li>Stockings are an early-shopper product — they go first on purpose</li></ul></div>
+    <div class="tcol b"><h3>🌿 Next drop</h3><p><strong>#3 Family-Name Ornament Sets · #4 Pet Photo Ornaments</strong></p><ul><li>Set up the personalization proofing workflow <em>before</em> publishing</li><li>Proof delays eat the cutoff — that's why these aren't Wave 1</li></ul></div>
+    <div class="tcol c"><h3>🎁 Then — bundles &amp; upsells</h3><p><strong>#5 Matching Family Sets · #6 Grandkids Blanket · #7 Glam Grandma Candle · #9 Bookish Tote</strong></p><ul><li>Higher tickets and gift sets that raise order value</li><li>Candle + mug and tote + candle + mug bundle as “cozy night in” sets</li></ul></div>
+  </div>
+</section>
+
+<section id="dates">
+  <div class="sec-head"><div><h2>📅 Dates that decide the season</h2><p>All dates 2026, from the strategist report (researched Oct 28, 2026).</p></div></div>
+  <div class="dates">
+    <div class="date"><time>THU<br>Nov 26</time><div><b>Thanksgiving</b><p>Also Printful's standard cutoff for products fulfilled <em>outside</em> the US — non-US items ordered on Black Friday already miss Christmas on standard shipping.</p></div></div>
+    <div class="date"><time>FRI<br>Nov 27</time><div><b>Black Friday — $12.9B forecast online (+9.2%)</b><p>Best apparel discounts of the season, peaking around 23% off apparel. Source: Adobe.</p></div></div>
+    <div class="date"><time>SAT<br>Nov 28</time><div><b>Small Business Saturday</b><p>Named in the report as the pop-up's best storytelling day.</p></div></div>
+    <div class="date"><time>MON<br>Nov 30</time><div><b>Cyber Monday — biggest online day, $15.1B (+6.2%)</b><p>Cyber Week total forecast: $47.5B. Source: Adobe.</p></div></div>
+    <div class="date"><time>EARLY<br>Dec</time><div><b>Peak personalized-order window</b><p>Etsy peak traffic cited as Nov 15–Dec 10. Set your own shop cutoff ~Dec 8–10, 2–3 days before your supplier's, for proofing buffer.</p></div></div>
+    <div class="date"><time>FRI<br>Dec 11</time><div><b>Printful cutoff — US-fulfilled apparel / home / living, standard</b><p>Verified live in the research window via POD Forecast. Outside-US express: Dec 14. US-fulfilled express: Dec 16.</p></div></div>
+    <div class="date"><time>THU<br>Dec 17</time><div><b>USPS send-by dates (carrier only)</b><p>Ground Advantage / First-Class Dec 17; Priority Dec 18; Priority Express Dec 19 — POD production must finish <em>before</em> these.</p></div></div>
+    <div class="date"><time>FRI<br>Dec 18</time><div><b>National Ugly Christmas Sweater Day</b><p>The real deadline for party sweaters is the party, not Dec 25.</p></div></div>
+  </div>
+  <div class="warn"><strong>⚠️ Printify cutoff — open question, stated plainly:</strong> Printify and Gelato had <strong>not published 2026 Christmas cutoffs</strong> as of Oct 23, 2026 (POD Forecast's check; Printify's status page still pointed to its Oct 31, 2025 announcement). The plan works on ~Dec 10 based on Printify's <em>2025</em> Choice dates — flagged as last year's, not 2026. Do not promise customers a date Printify hasn't published; re-check in early November. After your cutoff: switch to gift cards, digital/printable products, and honest “arrives after Christmas” wording — late promises on personalized items mean full-loss refunds, because personalized stock can't be resold.</div>
+</section>
+
+<section>
+  <div class="sec-head"><div><h2>All 12 categories, ranked by demand</h2><p>Synthesized from Printful, Printify's 2026 evergreen top-5, Teeinblue's Top-12 Christmas list, and Trendlytic. Retail ranges are Printify's published averages unless noted.</p></div></div>
+  <div class="catlist" id="catList"></div>
+</section>
+
+<section id="themes">
+  <div class="sec-head"><div><h2>🎨 Themes — what's open, what's saturated</h2><p>The rule from Trendlytic: the niche word — “Grandma,” “Dog Mom,” a name — is what makes a scrolling gift-buyer stop. Saturation calls are medium confidence: inferred from Etsy listing counts + trend reports, not a paid demand tool.</p></div></div>
+  <div class="themes" id="themeGrid"></div>
+</section>
+
+<section>
+  <div class="sec-head"><div><h2>Where each product gets sold</h2><p>Platform findings from the report — what each channel is actually doing this holiday.</p></div></div>
+  <div class="two">
+    <div class="panel"><h3>TikTok Shop</h3><ul>
+      <li><strong>Surprise #1:</strong> Custom wrapping paper was the <strong>#1-performing product across Printify merchant stores on TikTok Shop</strong> last holiday — ahead of hoodies. Then: Gildan 5000 tee (#2), blank wall calendars (#3 — and calendars sell into January), Comfort Colors 1717 tee (#4).</li>
+      <li><strong>26% of TikTok users</strong> bought or planned to buy gifts found on TikTok last holiday. No minimum follower count to sell.</li>
+      <li>Converting formats: gift-haul videos, cozy morning-routine videos (sweatshirts/blankets), gift-wrap/unboxing reveals. Hashtags pushed: #tiktokshopchristmas, #christmasgiftideas, #secretsanta.</li>
+      <li>The audience skews younger than women 40+ — use TikTok for discovery and gift-buyer reach (adult children buying for mom/grandma), not as the only storefront. <span class="src">Source: Printify TikTok Shop Playbook, Sep 29, 2026</span></li>
+    </ul></div>
+    <div class="panel"><h3>Etsy + the rest</h3><ul>
+      <li><strong>Etsy:</strong> Q4 is 40–60% of annual revenue for many sellers (secondary guide estimate). Winning Q4 searches: “custom ornament,” “personalized stocking,” “secret Santa gift.” Personalized friend gifts <strong>+1,400%</strong>; pet gifting searches <strong>doubled</strong> (Etsy Fall/Winter 2026 Trend Edit).</li>
+      <li><strong>Etsy 2026 aesthetics (eRank):</strong> Heirloom Holidays, Classic Heritage (tartan, velvet, dark wood), Glamorous Entertaining (Art Deco, velvet, navy/plum/black + gold), Blue &amp; Silver celestial, Enchanted Winter Garden.</li>
+      <li><strong>Gen-AI photo effects are not allowed on Etsy</strong> (Teeinblue policy note) — use AI-restyled art on your own storefront/TikTok, not Etsy.</li>
+      <li><strong>Amazon Merch:</strong> No official 2026 holiday trend report found. Guide consensus: Q4 spikes income, but it's invite-only with slow tiers (start Tier 10) and ~$2.21–$4.00 royalty on a $19.99 tee — <strong>not a primary channel</strong> for an Oct 28 pop-up launch unless an account/tier already exists.</li>
+      <li><strong>Printify / Printful guides agree:</strong> apparel leads; build around proven categories + personalization; merchandize by recipient (family = matching tees, ornaments, blankets, mugs, cards; friends = sweatshirts, mugs, stickers, totes, candles).</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="safe">
+  <div class="sec-head"><div><h2>🛡️ Stay safe — the trademark minefield</h2><p>“Christmas is a trademark minefield, and it's the season when takedowns spike” (Trendlytic). A December takedown can cost the season's payout. Check every phrase in USPTO TESS (Live status, Class 25 apparel / Class 28 ornaments) before designing.</p></div></div>
+  <div class="two">
+    <div class="panel dont"><h3>🚫 Do NOT use</h3><ul>
+      <li><strong>Grinch / How the Grinch Stole Christmas</strong> — Dr. Seuss Enterprises, live reg. 4038720 / 4798685, expressly covering Christmas tree ornaments; also “Grinchmas” and derivatives, and the character likeness.</li>
+      <li><strong>The Elf on the Shelf</strong> — live reg. 5020389 (CCA and B, LLC), incl. ornaments. Say “Christmas elf” generically instead.</li>
+      <li><strong>Rudolph the Red-Nosed Reindeer</strong> — live reg. 1309723 + copyrighted song. A generic reindeer is fine; a red-nosed reindeer <em>named Rudolph</em> / song lyrics are not.</li>
+      <li><strong>Frosty the Snowman</strong> — live reg. 2522936 (Warner Bros.) + copyrighted song. Generic snowman = fine.</li>
+      <li><strong>Disney / Peanuts / Elf (film) / Nightmare Before Christmas / Hallmark Keepsake</strong> (live Hallmark reg. for ornaments) — characters, likenesses, titles, quotes.</li>
+      <li><strong>Movie quotes/titles:</strong> “Merry Christmas Ya Filthy Animal” (Home Alone, registered since 2019), “A Christmas Story” as a title mark, Buddy-the-Elf quotes/images.</li>
+      <li><strong>Copyrighted songs:</strong> “All I Want for Christmas Is You” (registered), “Santa Claus Is Comin' to Town” (registered + copyrighted), “Last Christmas,” “White Christmas,” “Winter Wonderland,” “Let It Snow,” “Jingle Bell Rock,” “Little Drummer Boy,” “Santa Baby” (avoid building a lead product on it).</li>
+      <li><strong>Brand/team marks:</strong> NFL/NBA/university names &amp; logos, Stanley/Starbucks-style trade dress on tumblers, designer monograms in “glam” patterns — glam must be original pattern-work, not knockoff logos.</li>
+      <li><strong>Other sellers' artwork</strong> — including popular Black Santa / grandma illustrations; copyright applies even without a trademark. And read bundle licenses: several Etsy faith/coquette PNG bundles explicitly ban Amazon, TikTok, and Redbubble use.</li>
+    </ul></div>
+    <div class="panel safe"><h3>✅ Generally safer ground</h3><p class="note" style="margin-top:0">Still check USPTO per phrase / product class.</p><ul>
+      <li><strong>Your own original</strong> generic Santa Claus / Mrs. Claus drawing — the generic jolly Santa figure is public-domain folklore; specific Coca-Cola-style or artist-specific renderings are not yours to copy.</li>
+      <li>Generic reindeer / snowman / gingerbread / nutcracker motifs.</li>
+      <li>“Merry Christmas” and “Jesus is the reason for the season” as a common religious expression <strong>in your own original layout</strong> — widely used; the artwork/layout must be originated, and expect zero exclusivity.</li>
+      <li><strong>Bible verses:</strong> the text of public-domain translations (e.g. KJV) is public domain; modern translations like NIV/ESV are copyrighted — quote KJV or paraphrase and verify.</li>
+      <li><strong>Public-domain carols, original versions only:</strong> Silent Night, Deck the Halls, Jingle Bells, Joy to the World, O Holy Night, Away in a Manger, Hark! The Herald Angels Sing, The First Noel, We Three Kings — not modern arrangements, recordings, or later lyric translations.</li>
+    </ul></div>
+  </div>
+
+  <details><summary>Open questions — what the research could NOT verify</summary>
+    <ul>
+      <li><strong>Printify &amp; Gelato 2026 Christmas cutoffs</strong> — not published as of Oct 23, 2026; any ~Dec 10 date circulating is their 2025 date. Re-check Printify's Network Fulfillment Status page in early November.</li>
+      <li><strong>Printful knitwear 2026 cutoff</strong> — not published; 2025's was Nov 15 and knit takes 8–14 business days. (Another reason: no knit sweaters this season.)</li>
+      <li><strong>Plus-size–specific demand data</strong> — no 2026 trend report from Printful/Printify/Etsy quantifying plus-size holiday demand was found. The plus-size play rests on fit-range availability (S–5XL standard, 6XL specialty) and competitors under-serving it — not measured demand.</li>
+      <li><strong>Amazon Merch official 2026 holiday trends</strong> — no first-party report found; Merch findings come from seller guides (Merch Informer, Prinil, Accio), lower confidence.</li>
+      <li><strong>Bookish/cozy sales volumes</strong> — listing-level evidence only, no category sales figures found. That's why the bookish tote is a Wave-3 secondary bet, not the lead.</li>
+    </ul>
+  </details>
+</section>
+
+<div class="foot">
+  <p><strong>About this farm:</strong> Built Oct 28, 2026 from a same-day deep-research strategist report on the 2026 holiday print-on-demand market. Every price, date, and figure above carries its source; hedges and unverified items are stated as found, not smoothed over. Key sources:
+  <a href="https://printify.com/blog/holiday-guide/">Printify Holiday Guide 2026</a> ·
+  <a href="https://www.printful.com/blog/pod-holiday-bestsellers">Printful — 40 Things to Sell for Christmas 2026</a> ·
+  <a href="https://teeinblue.com/blogs/en/print-on-demand-christmas">Teeinblue — Top 12 POD Christmas Ideas 2026</a> ·
+  <a href="https://teeinblue.com/blogs/en/christmas-ornaments-to-make-and-sell">Teeinblue — Christmas Ornaments 2026</a> ·
+  <a href="https://www.trendlytic.io/blog/christmas-print-on-demand">Trendlytic — Christmas Print on Demand</a> ·
+  <a href="https://podforecast.com/trends/christmas-order-cutoffs-2026">POD Forecast — Christmas 2026 Order Cutoffs</a> ·
+  <a href="https://news.adobe.com/news/2026/09/adobe-us-holiday-shopping-season-to-hit-record">Adobe — U.S. Holiday Shopping Forecast</a> ·
+  <a href="https://printify.com/blog/most-profitable-print-on-demand-products/">Printify — Most Profitable POD Products</a> ·
+  <a href="https://help.erank.com/blog/holiday-2026-trends-etsy-sellers/">eRank — 2026 Holiday Trends for Etsy Sellers</a></p>
+  <p>Next step is yours, Glam: pick your batch above, and the Wave 1 four get built as drafts for your yes — same rule as always, nothing publishes without you.</p>
+</div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+var PRODUCTS=[
+ {n:1,phase:"now",phaseLabel:"Wave 1 · This week",cat:"Crewneck sweatshirt · S–5XL",title:"Glam Grandma Crewneck — names on the sleeve",art:"Original “[Nana / Mimi / Gigi] + grandkids' names on sleeve” design, gold & pink accents — your version of the proven “Cool Grandmas Club” format",price:"$44–54",per:"per sweatshirt",why:"<b>Why it wins:</b> Sweatshirts are the <strong>#1 POD winter category</strong> (Printful: #1 winter product; Printify range $35–55). The grandparent angle is a proven converter (Trendlytic), and Etsy bestsellers are exactly this format — club name, name-on-sleeve, “Est. 2026.” Your stack on top: <strong>personalization + true S–5XL + glam palette</strong>, where most competitors stop at a generic unisex listing."},
+ {n:2,phase:"now",phaseLabel:"Wave 1 · This week",cat:"Crewneck sweatshirt · S–5XL",title:"Faith Glam Nativity Crewneck",art:"Original jewel-tone & gold nativity — or Isaiah 9:6 in KJV wording — in elegant script, your own layout (not a stock bundle design)",price:"$44–54",per:"per sweatshirt",why:"<b>Why it wins:</b> Faith-based designs convert for church communities (Trendlytic). One Etsy roundup rated Christian Christmas <strong>medium demand, low–medium competition, 50–70% margins, $15–100</strong>. Jewel tones + champagne gold are Teeinblue's 2026 palette. Caution carried from the report: the exact phrase “Jesus is the Reason for the Season” is saturated and 880+ faith PNG bundles flood supply — win on original glam execution, specific verses, and accurate verse text, not commodity scripture tees."},
+ {n:8,phase:"now",phaseLabel:"Wave 1 · This week",cat:"Mug · 11–15 oz",title:"Pink Christmas Mug — “Merry & Blessed Grandma”",art:"Pink-and-gold faith/funny design, or retro Santa-hat monogram + name",price:"$18–24",per:"per mug · market $15–25",why:"<b>Why it wins:</b> Mugs are in <strong>every</strong> primary bestseller list (Printful, Printify, Teeinblue) and are among the fastest to fulfill — critical for an Oct 28 launch. <strong>Pink Christmas is 2026's breakout color story</strong> (blush, velvet bows, champagne metallics; Target has a dedicated pink section) — but Etsy supply skews teen/coquette, so <strong>grown-woman glam pink-and-gold is the open lane</strong>, and it matches this brand exactly. Perfect sub-$25 gift tier."},
+ {n:10,phase:"now",phaseLabel:"Wave 1 · This week",cat:"Personalized stockings · family set",title:"Heirloom Stockings — one name per stocking + a pet stocking",art:"Family name on each, heirloom gingham/tartan or pink velvet-look styling",price:"$28–38",per:"each · sets $84–140",why:"<b>Why it wins:</b> Stockings are a named Christmas focus product for <strong>both Printful and Printify</strong>; Etsy set data runs $30–65. One-name-per-stocking naturally sells as a set of 3–4+, and it <strong>repeats as families grow</strong> — a new grandbaby or pet next year is a built-in 2027 repeat purchase. Lightweight. Launch first: these are early-shopper products. Source: Teeinblue / Printify / Printful via report."},
+ {n:3,phase:"next",phaseLabel:"Wave 2 · Next drop",cat:"Personalized ornaments · sets",title:"Family-Name Ornament Set — up to 20 names + pets",art:"Glam heirloom styling, pink/red or tartan/velvet variants",price:"$18–28",per:"each · sets of 3–4: $54–84",why:"<b>Why it wins:</b> Ornaments are the <strong>top-selling POD Christmas decoration</strong> (Teeinblue); the US Christmas decor market was $3.12B in 2025 (Grand View, cited there). In December, <strong>55.4% of multi-item orders repeat the same design</strong>, and grandmothers are the natural buyer of the whole-family version. Honest hedge: this is the <strong>most saturated</strong> lane — 118,705 active Etsy family-name listings (Oct 15, 2026) — so the win is name capacity (up to 20 + pets), sets, and glam styling. Lower-supply twists exist too: Scrabble-style ornaments had only 1,010 listings with 47% of yearly volume in Nov–Dec; route/star-map ornaments just 123–514 listings."},
+ {n:4,phase:"next",phaseLabel:"Wave 2 · Next drop",cat:"Pet photo ornament",title:"“Grandma's Fur-Grandbaby” Pet Ornament + memorial variant",art:"Pet photo / watercolor portrait + name; memorial version: “forever in our hearts”",price:"$20–30",per:"per ornament",why:"<b>Why it wins:</b> <strong>Pet gifting searches doubled year over year</strong> and pet designs are <strong>12.0% of best sellers</strong> (vs family 9.9%) in Etsy's Fall/Winter 2026 Trend Edit; Adobe expects pet products <strong>+93% in Cyber Week</strong> vs the September average. Live Etsy comps: $19.99–$29.99. Photo share of sales rises 19.3% → 23.3% at Christmas. The memorial variant is a steady, less-crowded sub-niche. Etsy rule: human-made/photo print on Etsy; AI-restyle only off-Etsy."},
+ {n:5,phase:"then",phaseLabel:"Wave 3 · Bundles",cat:"Matching family sets · to 5XL",title:"Black Santa & Black Mrs. Claus Matching Family Sets",art:"ORIGINAL artwork only — family names, adult sizes to 5XL",price:"$24–32 / $42–52",per:"tees / sweatshirts, per adult",why:"<b>Why it wins:</b> Matching sets are the <strong>single strongest set product at Christmas</strong> (Teeinblue) — one design, 4+ sizes, a different name each. Demand is proven by the gap itself: PJs for the Culture was founded in Oct 2022 explicitly because Black Santa family pajamas <strong>could not be found</strong>, and Black Santa has since expanded at major retailers (Old Navy cited) — yet POD supply for <strong>adult, glam, plus-inclusive Black Mrs. Claus / glamorous Black grandma</strong> designs is almost nonexistent. The report calls this the biggest gap for this shop. Never copy another artist's Black Santa illustration."},
+ {n:6,phase:"then",phaseLabel:"Wave 3 · Bundles",cat:"Fleece / sherpa blanket",title:"“Blessed Nana” Blanket — all the grandkids' names",art:"“Grandma's House / Blessed Nana” with every grandchild's name, tartan or pink-glam border",price:"$49–79",per:"per blanket · market $40–80",why:"<b>Why it wins:</b> Blankets are a Printful reliable bestseller and a high-ticket cozy gift; family-name personalization is the proven blanket angle (Teeinblue). Classic Heritage tartan and Etsy's Heirloom Holidays trend support the styling. Its job in the farm: the <strong>average-order-value anchor</strong> sitting next to $20 ornaments."},
+ {n:7,phase:"then",phaseLabel:"Wave 3 · Bundles",cat:"Scented candle",title:"Glam Grandma Candle — funny + faith versions",art:"Original lines, e.g. “Smells Like the World's Most Glamorous Grandma” · faith variant “Light of the World” with verse",price:"$26–38",per:"per candle · market $25–45",why:"<b>Why it wins:</b> Candles appear in both Printful's bestseller list and Printify's friend/hostess gift table, at <strong>30–60% margins</strong> (Printify). Funny grandma candles already sell on Etsy at ~$13 unbranded — the <strong>premium scent / label / glam packaging tier at $25+</strong> is the open one. Low return risk, and it bundles easily with the mug."},
+ {n:9,phase:"then",phaseLabel:"Wave 3 · Bundles",cat:"Tote bag",title:"Cozy Bookish Grandma Tote — “One More Chapter”",art:"“Grandma's Book Club — One More Chapter” with retro books/tree art; faith-book variant",price:"$26–36",per:"per tote · market $25–45",why:"<b>Why it wins:</b> Totes hold <strong>30%+ margins</strong> (Printify), Printful notes they double as eco gift wrap, and “grandma things” totes are an existing Etsy bestseller format. Bookish is an <strong>emerging, low-saturation</strong> niche that fits women 40+ — with an honest hedge: evidence is listing-level only, no category sales figures were found, so this is a low-risk secondary collection, not the lead. It completes the “cozy night in” bundle (tote + candle + mug) and carries into church/library/bible-study use year-round."}
+];
+var CATS=[
+ [1,"Sweatshirts / crewnecks (incl. “ugly sweater” sweatshirts)","$35–55 · hoodies $45–65","Printful: hoodies/sweatshirts are the #1 winter product — cold-weather, higher ticket, “photograph as cozy gifts” (Trendlytic). Best vehicle for grandma/faith designs for this audience."],
+ [2,"Personalized ornaments","$15–35","“Top-selling POD Christmas decoration” (Teeinblue). US Christmas decor market $3.12B (2025, Grand View, cited there). Average personalized item $30.89 (Teeinblue). Families buy multiples."],
+ [3,"T-shirts","$18–30","#1 volume POD product overall. On TikTok Shop via Printify last holiday: Gildan 5000 was #2, Comfort Colors 1717 #4. Cheaper add-on — but most saturated."],
+ [4,"Mugs","$15–25","Evergreen Christmas gift in every primary guide (Printful, Printify, Teeinblue); fast to print/ship — important for a late-October launch. Insulated tumbler base ~$19 avg in the POD pricing index."],
+ [5,"Matching family pajamas / tees","PJs $13–23/piece · family tees ~$17–22","“Single strongest set product at Christmas” (Teeinblue). Christmas pajama search interest spikes +220% into November (SaleHoo, avg $19). Caution: true PJ sets are harder via Printful/Printify than matching tees/sweatshirts — most small POD sellers do matching tops."],
+ [6,"Blankets / throws","$40–80","Printful cozy bestseller; high ticket, personalization-friendly. Bundle with mugs/candles."],
+ [7,"Candles (scented, labeled)","$25–45","Printful lists candles among best Christmas sellers; friend/hostess gift staple in Printify's recipient table. 30–60% margin (Printify). Funny grandma examples sell ~$13 on Etsy at the low end — premium labeled candles hold $25+."],
+ [8,"Stockings (personalized)","Sets $30–65 (Etsy guide data)","Printify/Printful both name stockings a Christmas focus product; “one name per stocking is what makes the listing sell as a family set” (Teeinblue). Lightweight; repeats as families grow."],
+ [9,"Tote bags","$25–45","Printify: totes consistently 30%+ margin. Printful: totes double as eco gift wrap. “Grandma things” tote is an Etsy bestseller format."],
+ [10,"Pet products","Ornaments $14–30 · sweatshirts $35–50","Pet gifting searches doubled in Etsy's Fall/Winter 2026 Trend Edit; Adobe expects pet products +93% in Cyber Week vs September average. Live Etsy pet ornaments $13.56–$29.99."],
+ [11,"Wrapping paper + greeting cards + wall calendars","Low-ticket cards in sets · paper varies","Surprise #1: custom wrapping paper was #1 across Printify merchant stores on TikTok Shop last holiday, ahead of hoodies; calendars #3 and sell into January. Cards are the fastest to print/ship — the late-start product (Teeinblue)."],
+ [12,"Acrylic plaques / wall art / canvas","Plaques retail $30–50 typ. · canvas $40–80","Acrylic plaques = “strongest newer decoration” (Teeinblue). Gen-AI photo effects earn most on wall art (18.7% of Gen-AI campaigns, avg ticket $37.14 vs $30.89 overall). Plaque base cost ~$16."]
+];
+var THEMES=[
+ ["open","Pink Christmas — the breakout lane 💗","2026 breakout color story (Gift Shop Plus / XmasTips): blush ornaments, velvet bows, champagne metallics, pink+red pairing; Target has a dedicated pink Christmas section for 2026. Etsy supply is heavy in teen/young coquette bundles — glam pink-and-gold for grown women (grandma, faith, hostess) is the open lane, and it matches this brand exactly. Etsy's Glamorous Entertaining trend (Art Deco, velvet, navy/plum/black + gold) is the adult-glam counterpart."],
+ ["open","Representation — Black Santa / Black family Christmas","Still open / underserved in POD with proven consumer demand. A dedicated brand (PJs for the Culture, founded Oct 2022) exists because Black Santa family pajamas could not be found. Biggest gap for this shop: Black Mrs. Claus / glamorous Black grandma / Black nativity-adjacent faith designs for women 40+ — almost no POD supply found. Original artwork only."],
+ ["mixed","Funny grandma / grandmother","Proven, crowded at the generic level, open at the specific level. Trendlytic lists grandparents as a reliably converting niche. Etsy bestseller formats: “Cool Grandmas Club,” “Love Them, Spoil Them, Give Them Back,” “Grandma Est. 2026,” name-on-sleeve, Nana/Mimi/Gigi/Gaga/Lola variants. Open space: glam (gold, bows, pink), faith + funny combined, and true plus-size fits."],
+ ["mixed","Faith-based Christmas","Steady demand; the exact phrase “Jesus is the Reason for the Season” is saturated, authentic/glam execution is not. Christian Christmas rated medium demand, low–medium competition, 50–70% margins, $15–100 (one Etsy roundup). But 880+ faith PNG bundles flood supply — commodity scripture tees are a race to the bottom. Open: jewel-tone/gold nativity, specific verses (Isaiah 9:6, Luke 2:11) in original layouts, church-group personalization, faith on candles/ornaments/blankets. Verse accuracy matters to this buyer."],
+ ["mixed","Personalized / family-name","Highest demand, MOST saturated — enter only with a twist. Family-name ornaments: 118,705 active Etsy listings (Oct 15, 2026); baby's-first 114,586; photo 96,049. Win by scaling to up to 20 names + pets, selling sets, or using low-supply formats (Scrabble-style: 1,010 listings; route/star-map: 123–514)."],
+ ["open","Plus-size holiday — differentiation, not a proven trend","No 2026 Printful/Printify/Etsy report names plus-size humor as a headline trend — stated plainly, this rests on execution, not measured demand. Standard POD crewnecks already run S–5XL; specialty retailers advertise to 6XL at one price for every size, while most Etsy competitors bury the size range. Lead with “fits every body, same price, glam not frumpy,” confident (not self-deprecating) humor, and 2X–3X models in mockups."],
+ ["mixed","Pet holiday","Trending up, moderately crowded — personalization is the moat. Pet gifting searches doubled YoY; pet designs = 12.0% of best sellers. Open sub-angles: pet memorial, “Dog Grandma / Nana's fur-grandbaby,” multi-pet family ornaments."],
+ ["open","Cozy / bookish","Emerging niche, low saturation — evidence is listing-level (book-club Christmas sweatshirts, “one more chapter” crewnecks, bookish totes/mugs), no category sales figures found. Fits women 40+ and pairs into a “cozy night in” bundle. Secondary collection, not the lead."],
+ ["mixed","Retro / vintage Christmas — a style layer, not a niche","Trending and broad. Teeinblue: watercolor, vintage, retro, rustic, memorial remain 2026 favorites. Gift Shop Plus forecasts nostalgic heritage “Ralph Lauren Christmas” (red plaid, classic greenery, heirloom quality) as a defining Holiday 2026 aesthetic; Etsy's own 2026 trends include Heirloom Holidays and Classic Heritage. Also in the 2026 reports: jewel tones + champagne gold displacing plain red/green; gingerbread family sets (20,546 listings); nutcracker / Candyland / winter woodland motifs — build from generic motifs, not named characters."],
+ ["sat","Avoid as lead bets","Generic “Merry Christmas” tees · generic family-name ornaments without a twist · commodity “Jesus is the Reason” tees in stock layouts · generic photo ornaments · ugly-sweater jokes with no niche word in the text."]
+];
+var grid=document.getElementById('farmGrid');
+PRODUCTS.forEach(function(p){
+  var d=document.createElement('article'); d.className='card'; d.dataset.phase=p.phase;
+  d.innerHTML='<div class="rankrow"><div class="rank">'+p.n+'</div><span class="phase '+p.phase+'">'+p.phaseLabel+'</span><div class="price">'+p.price+'<small>'+p.per+'</small></div></div>'
+   +'<h3>'+p.title+'</h3><div class="art">'+p.art+'</div><p><strong>'+p.cat+'</strong></p>'
+   +'<p class="why">'+p.why+'</p>'
+   +'<footer><button class="addbtn" type="button">Add to my batch</button><span class="tag">Draft first — your yes before it publishes</span></footer>';
+  var btn=d.querySelector('.addbtn');
+  btn.addEventListener('click',function(){ d.classList.toggle('inbatch'); var on=d.classList.contains('inbatch'); btn.textContent=on?'✓ In my batch — tap to remove':'Add to my batch'; btn.classList.toggle('added',on); renderBatch(); });
+  grid.appendChild(d);
+});
+document.querySelectorAll('.fbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    document.querySelectorAll('.fbtn').forEach(function(x){x.setAttribute('aria-pressed','false')});
+    b.setAttribute('aria-pressed','true');
+    var f=b.dataset.f;
+    document.querySelectorAll('#farmGrid .card').forEach(function(c){ c.classList.toggle('hide', f!=='all' && c.dataset.phase!==f); });
+  });
+});
+var batch=[];
+function renderBatch(){
+  batch=[]; document.querySelectorAll('#farmGrid .card.inbatch').forEach(function(c){ batch.push(c.querySelector('h3').textContent); });
+  document.getElementById('batchCount').textContent=batch.length+(batch.length===1?' product':' products');
+  document.getElementById('batchNames').textContent=batch.length?batch.join(' · '):'Nothing picked yet — tap “Add to my batch” on the rows you want built first.';
+}
+document.getElementById('copyBatch').addEventListener('click',function(){
+  var t=document.getElementById('toast');
+  if(!batch.length){ t.textContent='Pick at least one row first, Glam 🌾'; t.classList.add('show'); setTimeout(function(){t.classList.remove('show')},2200); return; }
+  var text='My Holiday Farm batch for House of Glam:\n'+batch.map(function(x,i){return (i+1)+'. '+x}).join('\n');
+  function done(){ t.textContent='Batch copied — paste it back to me and I\'ll build them as drafts 🦋'; t.classList.add('show'); setTimeout(function(){t.classList.remove('show')},2600); }
+  if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(done).catch(function(){ fallback(); }); } else { fallback(); }
+  function fallback(){ var ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(e){} document.body.removeChild(ta); done(); }
+});
+var cl=document.getElementById('catList');
+CATS.forEach(function(c){
+  var r=document.createElement('div'); r.className='catrow';
+  r.innerHTML='<div class="n">'+c[0]+'</div><div><b>'+c[1]+'</b><p>'+c[3]+'</p></div><div class="pr">'+c[2]+'</div>';
+  cl.appendChild(r);
+});
+var tg=document.getElementById('themeGrid');
+THEMES.forEach(function(t){
+  var d=document.createElement('div'); d.className='theme';
+  var v=t[0]==='open'?'<span class="verdict v-open">Still open</span>':t[0]==='sat'?'<span class="verdict v-sat">Saturated — avoid</span>':'<span class="verdict v-mixed">Mixed — enter with a twist</span>';
+  d.innerHTML=v+'<h3>'+t[1]+'</h3><p>'+t[2]+'</p>'; tg.appendChild(d);
+});
+(function(){
+  var today=new Date(2026,9,28);
+  function days(m,d){ return Math.round((new Date(2026,m,d)-today)/86400000); }
+  document.getElementById('cBF').textContent=days(10,27);
+  document.getElementById('cCM').textContent=days(10,30);
+})();
+</script>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});}</script>
+</body>
+</html>
